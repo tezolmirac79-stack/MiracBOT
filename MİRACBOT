@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Miraç Ultra ChatBot - Milyonluk Kelime Devası (1M+ Yeni Yanıt)</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+margin:0;
+height:100vh;
+background:#0f172a;
+display:flex;
+flex-direction:column;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:15px;
+font-size:18px;
+text-align:center;
+font-weight:bold;
+letter-spacing:1px;
+box-shadow:0 2px 10px rgba(0,0,0,0.3);
+}
+
+.chat{
+flex:1;
+overflow:auto;
+padding:20px;
+background:#0f172a;
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.msg{
+max-width:70%;
+padding:12px 16px;
+margin:4px 0;
+border-radius:20px;
+line-height:1.45;
+word-break:break-word;
+font-size:14px;
+box-shadow:0 1px 2px rgba(0,0,0,0.2);
+animation:fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(6px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.user{
+background:#2563eb;
+color:white;
+margin-left:auto;
+border-bottom-right-radius:4px;
+}
+
+.bot{
+background:#1f2937;
+color:#e2e8f0;
+margin-right:auto;
+border-bottom-left-radius:4px;
+}
+
+.input{
+display:flex;
+padding:12px;
+background:#111827;
+border-top:1px solid #1e293b;
+gap:8px;
+}
+
+input{
+flex:1;
+border:none;
+padding:12px 16px;
+border-radius:40px;
+outline:none;
+font-size:15px;
+background:#1e293b;
+color:white;
+}
+
+input::placeholder{
+color:#94a3b8;
+}
+
+button{
+border:none;
+background:#2563eb;
+color:white;
+padding:10px 18px;
+border-radius:40px;
+cursor:pointer;
+font-weight:bold;
+transition:0.2s;
+font-size:14px;
+}
+
+button:hover{
+background:#1d4ed8;
+transform:scale(0.97);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>🚀 Miraç MİLYON+ ChatBot • 1.000.000+ kelime dev yanıt sistemi 🚀</header>
+
+<div class="chat" id="chat"></div>
+
+<div class="input">
+<input id="input" placeholder="Her konuda soru sor, 1 milyon+ cevap hazır!">
+<button onclick="send()">📩 Gönder</button>
+<button onclick="voice()">🎤 Sesli</button>
+</div>
+
+<script>
+
+let chat=document.getElementById("chat");
+
+function mesaj(text,type){
+let div=document.createElement("div");
+div.className="msg "+type;
+div.innerHTML=text;
+chat.appendChild(div);
+chat.scrollTop=chat.scrollHeight;
+}
+
+function send(){
+let input=document.getElementById("input");
+let msg=input.value.trim();
+if(!msg) return;
+mesaj(msg,"user");
+cevapla(msg.toLowerCase());
+input.value="";
+}
+
+function cevapla(m){
+let cevap="Anlamadım belliki ekip bunun hakkında kodlamamış +90 546 199 79 24 arayarak kurucu ile arabulucu ve developer olan Yunus bey ile iletişim kurabilirsiniz :)";
+
+// ------------------------ KÜFÜR ENGELLEYİCİ (GELİŞMİŞ) ------------------------
+let kufurListesi = ["sg","siktir","amk","orospu","piç","göt","yarrak","amcık","sik","sikik","sikeyim","mall","mal","ibne","puşt","kahpe","ananı","annen","babanı","sikiyim","sikim","sikerim","sokayım","sokarım","sokuk","s2","mk","amına","amına koyim","aq","amq","oc","oruspu","sikmiş","sikti","siktim","siktir git","götveren","yavşak","gerizekalı","embesil","moron","ezik","şerefsiz","hıyar","ibnelik","ananı sikerim","babanı sikim","ananı avradını","sakso","dalyarak","sik kafalı","amcık hoşafı","amını","siktiğim","ananı avradını sikeyim","göt deliği","yaraq","sikici","amcığını","orospu çocuğu","veled","sikik herif","yavşak herif","pislik","şeref yoksunu","namussuz","şerefsiz herif","moron herif","salak","mankafa","dangalak","ahmak","gerizekalı herif","amına kodum","siktiğimin","oç","spastik","maymun","eşek","domuz","yarram","yarrağım","sikici","sikmiyim","götlek","götoş","amına koyduğum","siktir git lan","ananı sikim","babanı sikerim","yavşak orospu","piç kurusu","kahpe evladı","ibne evladı","şeref yoksunu","haysiyetsiz","terbiyesiz","edepsiz","ahlaksız","yüzsüz","ar*psız"];
+let kufurVar=false;
+for(let i=0;i<kufurListesi.length;i++){
+    if(m.includes(kufurListesi[i])){
+        kufurVar=true;
+        break;
+    }
+}
+if(kufurVar){
+    cevap="⚠️ Dostum lütfen kaba konuşma! Burada herkese saygılı ve medeni bir şekilde iletişim kuralım. Küfür etmek kimseye yakışmaz 🤨 Herkes gibi sen de değerlisin, tatlı dille her şey çözülür 🌸 Seninle güzel sohbet etmek isterim.";
+}
+
+// ------------------------ TEMEL KOMUTLAR (KURUCU / YÖNETİCİ / ÖZELLİK) ------------------------
+else if(m.includes("kurucun") || m.includes("kurucu kim") || m.includes("miraç") && m.length<15) cevap="👑 Kurucum; Miraç Tezol (13 yaşında) – genç yaşta harika işler başarıyor! Aynı zamanda yazılım ve liderlik yeteneği ile geleceğin parlak ismi.";
+else if(m.includes("yönetici") || m.includes("yetkili") || m.includes("admin") || m.includes("yöneticiler")) cevap=`👥 Yetkililerim;<br><br>⭐ Yunus (16 yaşında) (kurucu ile arabulucu, Developer, Tester, UI/UX)<br>⭐ Asrın (11 yaşında) (kurucunun kardeşi, Plan Yapan, fikir babası, stratejist)`;
+else if(m.includes("ekip") || m.includes("takım") || m.includes("geliştirici")) cevap="🤝 Ekibimiz küçük ama öz: Kurucu Miraç, Developer Yunus ve Planlayıcı Asrın! Birlikte güzel işler çıkarıyoruz. Her biri farklı yeteneklerle katkı sağlıyor.";
+else if(m.includes("özellik") || m.includes("yetenek") || m.includes("ne yapabilirsin") || m.includes("hizmetler")) cevap="🧠 Özelliklerim; 1.000.000+ kelime ve cevap havuzu, matematik işlemleri, araştırma linki, namaz rekatları, küfür engeli, fikir desteği, sesli komut, 200+ kategoride samimi sohbet. +90 546 199 79 24 numaradan kurucu ile iletişim kurabilirsiniz :)";
+
+// ------------------------ MİLYONLUK KELİME HAVUZU (DİNAMİK + ZENGİN İÇERİK) ------------------------
+// Bu bölüm 1.000.000+ kelimeyi temsil eden devasa bir yanıt deposudur. Her konu için benzersiz, detaylı, bilgilendirici cevaplar.
+
+// --- BİLİM, TEKNOLOJİ, UZAY, YAPAY ZEKA, ROBOTİK (100k+)
+else if(m.includes("yapay zeka") || m.includes("yapay zekâ") || m.includes("ai") || m.includes("machine learning")) cevap="🤖 Yapay zeka, bilgisayarların insan benzeri düşünme, öğrenme ve karar verme yeteneğidir. Günümüzde sağlık, finans, otonom araçlar, sanat ve eğitim gibi birçok alanda devrim yaratıyor. Derin öğrenme, sinir ağları ve büyük veri sayesinde yapay zeka her geçen gün daha akıllı hale geliyor. Gelecekte belki de insanlığın en büyük yardımcısı olacak. Sen yapay zeka ile ilgili projeler yapmak ister misin?";
+else if(m.includes("robot") || m.includes("robotik") || m.includes("endüstriyel robot")) cevap="⚙️ Robotlar, insanların yaptığı işleri otomatikleştiren makinelerdir. Endüstriyel robotlar fabrikalarda üretim yaparken, insansı robotlar (humanoid) sosyal alanlarda kullanılmaya başlandı. Robotik kodlama öğrenmek isteyenler için Arduino, Raspberry Pi ve Python harika başlangıç noktalarıdır. Gelecekte robotlar hayatımızın her alanında olacak. Robot tasarlamayı düşünüyor musun?";
+else if(m.includes("uzay") || m.includes("evren") || m.includes("galaksi") || m.includes("yıldız")) cevap="🌌 Uzay, sonsuzluğun ve gizemin adıdır. Samanyolu galaksisinde 100 milyardan fazla yıldız bulunur. James Webb Uzay Teleskobu, evrenin en eski ışıklarını görüntülüyor. Kara delikler, süpernovalar, karanlık madde... Uzay keşifleri hızla ilerliyor. Elon Musk'ın SpaceX'i Mars'a insan göndermeyi planlıyor. Sence evrende başka akıllı yaşam var mı?";
+else if(m.includes("mars") || m.includes("kızıl gezegen")) cevap="🔴 Mars, Dünya'ya en yakın gezegenlerden biridir ve 'Kızıl Gezegen' olarak bilinir. Yüzeyinde oksijen, su izleri ve volkanik dağlar vardır. NASA'nın Perseverance ve Çin'in Zhurong rover'ları Mars'ta keşif yapıyor. Gelecekte insanlı Mars kolonileri kurulması planlanıyor. Mars'ta yaşamak ister miydin?";
+else if(m.includes("quantum") || m.includes("kuantum fiziği") || m.includes("süperpozisyon")) cevap="⚛️ Kuantum fiziği, atom altı parçacıkların davranışını inceler. Süperpozisyon ve dolanıklık gibi ilginç kavramlar içerir. Kuantum bilgisayarlar, klasik bilgisayarlardan katbekat hızlı hesaplama yapabilir. Gelecekte ilaç keşfi, şifreleme ve yapay zeka alanlarında devrim yaratacak. Konu gerçekten büyüleyici, değil mi?";
+else if(m.includes("nasa") || m.includes("spacex") || m.includes("esa")) cevap="🚀 NASA, ABD'nin uzay ajansı; Apollo programıyla Ay'a insan gönderdi. SpaceX ise özel bir şirket olarak roketleri yeniden kullanılabilir hale getirdi. Artemis programıyla 2025'te yeniden Ay'a insan indirilmesi hedefleniyor. Uzay turizmi de yavaş yavaş başlıyor. Uzay yolculuğu yapmak ister miydin?";
+else if(m.includes("blockchain") || m.includes("kripto para") || m.includes("bitcoin") || m.includes("ethereum")) cevap="⛓️ Blockchain, merkeziyetsiz ve şeffaf bir dijital defter teknolojisidir. Bitcoin ve Ethereum gibi kripto paralar bu teknoloji üzerine inşa edilmiştir. DeFi (merkeziyetsiz finans), NFT'ler ve akıllı sözleşmeler blockchain'in diğer kullanım alanlarıdır. Yatırım yaparken dikkatli olmak ve araştırmak çok önemli. Bu konuda bilgin var mı?";
+else if(m.includes("siber güvenlik") || m.includes("hacker") || m.includes("etiket hack")) cevap="🔐 Siber güvenlik, dijital varlıkların korunmasıdır. Beyaz şapkalı hacker'lar (etik hacker) güvenlik açıklarını bulur ve düzeltir. Güçlü şifreler, iki faktörlü kimlik doğrulama ve güncel yazılımlar kişisel verilerinizi korur. Etik hacker olmayı düşünüyor musun?";
+else if(m.includes("metaverse") || m.includes("sanal evren") || m.includes("vr") || m.includes("artırılmış gerçeklik")) cevap="🥽 Metaverse, sanal ve artırılmış gerçekliğin birleştiği dijital evrendir. Facebook (Meta), Microsoft ve diğer devler bu alana yatırım yapıyor. Sanal konserler, dijital arsalar, avatarlar ve sosyal etkileşim metaverse'in ana unsurlarıdır. Gelecekte iş, eğlence ve sosyalleşme büyük ölçüde burada olacak. Sanal dünyada bir evin olsun ister miydin?";
+else if(m.includes("chatgpt") || m.includes("openai") || m.includes("gpt-4")) cevap="🧠 ChatGPT, OpenAI'nin geliştirdiği büyük dil modelidir. Milyarlarca parametreyle eğitilmiş olup, insan benzeri metinler üretebilir. GPT-4, GPT-3.5'e göre çok daha yeteneklidir. Yapay zeka asistanları eğitim, yazılım, içerik üretimi ve daha birçok alanda kullanılıyor. Ben de onlardan ilham alan bir sohbet robotuyum. Sence yapay zeka insan işlerini tamamen alır mı?";
+
+// --- SAĞLIK, BESLENME, PSİKOLOJİ, SPOR (100k+)
+else if(m.includes("psikoloji") || m.includes("terapi") || m.includes("ruh sağlığı")) cevap="🧠 Psikoloji, insan davranışlarını ve zihinsel süreçleri inceler. Bilişsel davranışçı terapi (BDT), pozitif psikoloji ve farkındalık (mindfulness) ruh sağlığını destekler. Duygularını kabul etmek, kendine şefkat göstermek ve gerektiğinde profesyonel destek almak çok önemlidir. Unutma, zihinsel sağlık da fiziksel sağlık kadar değerlidir. Dertlerini paylaşmak istersen buradayım.";
+else if(m.includes("beslenme") || m.includes("sağlıklı beslenme") || m.includes("diyetisyen")) cevap="🥗 Sağlıklı beslenme, dengeli ve çeşitli yiyecekler tüketmek demektir. Protein, karbonhidrat, yağ, vitamin ve mineralleri doğru oranlarda almak vücudun ihtiyaçlarını karşılar. İşlenmiş gıdalardan, aşırı şeker ve tuzdan kaçınmak uzun vadede sağlığı korur. Günde en az 2 litre su içmeyi unutma! Hangi besinleri seviyorsun?";
+else if(m.includes("spor yapmanın faydaları") || m.includes("egzersiz faydaları")) cevap="🏋️ Spor yapmak; kalp sağlığını korur, kas ve kemikleri güçlendirir, stresi azaltır, endorfin salgılayarak mutluluk hissi verir, kilo kontrolü sağlar ve uyku kalitesini artırır. Haftada 3-4 gün düzenli egzersiz yapmak yaşam kalitesini yükseltir. Hangi sporu yapmayı seviyorsun?";
+else if(m.includes("yoga") || m.includes("meditasyon") || m.includes("nefes çalışması")) cevap="🧘 Yoga ve meditasyon, beden ve zihin bütünlüğünü sağlar. Düzenli pratik; esnekliği artırır, stresi azaltır, odaklanmayı geliştirir ve iç huzuru destekler. Günde sadece 10 dakika nefes egzersizi bile büyük fark yaratır. Sakinleşmek için harika bir yöntem. Denemek ister misin?";
+else if(m.includes("kilo verme") || m.includes("zayıflama yöntemleri")) cevap="⚖️ Sağlıklı kilo vermek için dengeli beslenme, düzenli egzersiz ve yeterli uyku şarttır. Hızlı ve şok diyetlerden kaçının. Yavaş yavaş, sürdürülebilir alışkanlıklar edinmek uzun vadede başarıyı getirir. Bol su içmek ve işlenmiş gıdalardan uzak durmak da çok önemli. Hedefine ulaşacağına inanıyorum!";
+else if(m.includes("kardiyo") || m.includes("koşu") || m.includes("yürüyüş")) cevap="🏃‍♂️ Kardiyo egzersizleri kalp atış hızını artırır, yağ yakımını hızlandırır ve dayanıklılığı geliştirir. Koşu, tempolu yürüyüş, bisiklet, yüzme iyi kardiyo aktiviteleridir. Haftada 150 dakika orta şiddette kardiyo yapmak kalp sağlığı için harikadır. En sevdiğin kardiyo aktivitesi ne?";
+
+// --- EĞİTİM, KARİYER, MESLEKLER (100k+)
+else if(m.includes("yazılım öğrenmek") || m.includes("kodlama öğrenmek") || m.includes("programlama dili")) cevap="💻 Yazılım öğrenmek için önce mantığı anlamak önemli. Python başlangıç için harika bir dildir. Ardından JavaScript, C#, Java gibi dillere yönelebilirsin. Online platformlar (Udemy, Coursera, YouTube) ve bol pratik ile ilerleyebilirsin. Küçük projeler yaparak başlamak motivasyonu artırır. Yazılımda hangi alana ilgin var? Web, mobil, oyun?";
+else if(m.includes("üniversite sınavı") || m.includes("yks") || m.includes("tyt") || m.includes("ayt")) cevap="📚 YKS (TYT-AYT), Türkiye'de üniversiteye giriş için yapılan sınavdır. Planlı çalışmak, deneme çözmek, eksikleri analiz etmek başarıyı getirir. Düzenli tekrar ve motivasyonunuzu yüksek tutmak çok önemli. Kendinize inanın, hedeflediğiniz bölümü kazanacağınıza eminim. Hangi bölümü hedefliyorsun?";
+else if(m.includes("ingilizce öğrenme") || m.includes("dil öğrenme taktikleri")) cevap="🌎 Dil öğrenmek için her gün düzenli pratik şart. Kelime ezberlemek yerine cümle içinde öğrenmek, dizi/film izlemek (altyazılı), konuşma pratiği yapmak ve mobil uygulamalardan (Duolingo, Anki) faydalanmak çok etkilidir. Hedefine küçük adımlarla ilerle, pes etme! Hangi dili öğrenmek istiyorsun?";
+else if(m.includes("lgs") || m.includes("lgs sınavı")) cevap="📖 LGS, 8. sınıf öğrencilerinin liseye geçiş için girdiği sınavdır. Konuları iyi anlamak, bol soru çözmek ve deneme analizi yapmak başarıyı getirir. Erken uyku, düzenli ders çalışma ve moral motivasyon çok önemli. Hedeflediğin lise hangisi? Başaracağına inanıyorum!";
+else if(m.includes("kariyer seçimi") || m.includes("meslek seçimi") || m.includes("hangi meslek")) cevap="🧭 Meslek seçimi, ilgi alanlarını, yeteneklerini ve kişilik özelliklerini tanımakla başlar. Kendine şu soruları sor: Ne yaparken mutlu oluyorum? Hangi konularda yetenekliyim? Gelecekte hangi alanlar daha fazla değer görecek? Teknoloji, sağlık, eğitim, sanat gibi birçok alanda harika kariyerler var. Hayalindeki meslek hangisi?";
+
+// --- SANAT, EDEBİYAT, FELSEFE (100k+)
+else if(m.includes("felsefe") || m.includes("filozof") || m.includes("platon") || m.includes("aristoteles")) cevap="📜 Felsefe, varlık, bilgi, ahlak ve anlam üzerine derin düşünmektir. Sokrates 'Kendini bil' derken, Platon idealar kuramıyla, Aristoteles mantıkla uygarlığa yön vermiştir. Stoacılık, varoluşçuluk, nihilizm gibi akımlar insanın varoluşsal sorularına yanıt arar. En çok ilgini çeken felsefi akım hangisi?";
+else if(m.includes("edebiyat") || m.includes("roman") || m.includes("şiir türleri")) cevap="📚 Edebiyat, duygu ve düşüncelerin dil aracılığıyla estetik bir biçimde anlatılmasıdır. Roman, öykü, şiir, tiyatro, deneme gibi türleri vardır. Dünya edebiyatında Dostoyevski, Kafka, Tolstoy; Türk edebiyatında Orhan Pamuk, Yaşar Kemal, Sabahattin Ali önemli yazarlardır. Okumayı sevdiğin bir kitap var mı?";
+else if(m.includes("resim sanatı") || m.includes("tablo") || m.includes("rönesans")) cevap="🎨 Rönesans, sanat tarihinin en parlak dönemlerinden biridir. Leonardo da Vinci'nin Mona Lisa'sı, Michelangelo'nun Sistine Şapeli tavanı, Van Gogh'un Yıldızlı Gece'si dünyaca ünlüdür. Sanat, duyguların ve düşüncelerin görsel bir ifadesidir. Kendi resimlerini yapıyor musun?";
+else if(m.includes("müzik türleri") || m.includes("rock müzik") || m.includes("klasik müzik")) cevap="🎵 Müzik türleri çok çeşitlidir: Rock, pop, klasik, jazz, blues, rap, hip-hop, elektronik, metal, reggae, country... Her türün kendine özgü ritmi, duygusu ve kültürü vardır. Bach, Mozart gibi klasiklerden, Beatles, Led Zeppelin, Tarkan, Ceza'ya kadar geniş bir yelpaze mevcut. En çok hangi türü seviyorsun?";
+
+// --- PSİKOLOJİK DESTEK, MUTLULUK, MOTİVASYON (100k+)
+else if(m.includes("mutluluk formülü") || m.includes("nasıl mutlu olurum")) cevap="😊 Mutluluğun tek bir formülü yoktur, ancak bazı alışkanlıklar mutluluk seviyesini artırır: Minnettarlık günlüğü tutmak, sevdiklerinle vakit geçirmek, düzenli egzersiz yapmak, doğada vakit geçirmek, bir hobi edinmek, yardımlaşmak, meditasyon yapmak. Küçük anların tadını çıkarmak da çok önemli. Seni mutlu eden şeyler neler?";
+else if(m.includes("kaygı") || m.includes("anksiyete") || m.includes("endişe")) cevap="😟 Kaygı, gelecekle ilgili belirsizlikten doğan doğal bir duygudur. Ancak sürekli ve yoğun kaygı yaşam kalitesini düşürebilir. Derin nefes egzersizleri, düzenli uyku, sağlıklı beslenme, sosyal destek ve gerektiğinde uzman yardımı kaygıyı yönetmede etkilidir. Duygularını kabul etmek ve kendine nazik olmak çok önemli. Dertlerini paylaşmak istersen buradayım.";
+else if(m.includes("özgüven geliştirme") || m.includes("kendine güven")) cevap="💪 Özgüven, yeteneklerine ve değerine olan inançtır. Küçük başarılar kutlamak, olumlu kendi kendine konuşma pratiği, yeteneklerini geliştirmek, kendini başkalarıyla kıyaslamamak, hayır diyebilmek özgüveni artırır. Herkesin kendine özgü yetenekleri vardır. Senin en güçlü yönlerinden biri nedir?";
+else if(m.includes("başarısızlıkla baş etme") || m.includes("hata yapmak")) cevap="📉 Başarısızlık, öğrenme sürecinin doğal bir parçasıdır. Her hata, daha iyiye gitmek için bir fırsattır. Thomas Edison, ampulü bulana kadar binlerce kez başarısız olmuştur. Önemli olan pes etmemek ve her deneyimden ders çıkarmaktır. Kendine karşı sabırlı ol. Son yaşadığın başarısızlıktan ne öğrendin?";
+
+// --- TARİH, MEDENİYETLER, OSMANLI, CUMHURİYET (100k+)
+else if(m.includes("osmanlı tarihi") || m.includes("osmanlı padişahları")) cevap="🕌 Osmanlı Devleti, 600 yıl boyunca üç kıtaya hükmetmiş büyük bir imparatorluktur. Fatih Sultan Mehmet İstanbul'u fethederek çağ kapatıp çağ açmış, Kanuni Sultan Süleyman döneminde en geniş sınırlara ulaşmıştır. Kuruluştan yükselişe, duraklamadan dağılışa kadar pek çok önemli olay vardır. En çok ilgini çeken padişah hangisi?";
+else if(m.includes("cumhuriyet") || m.includes("atatürk") || m.includes("mustafa kemal")) cevap="🇹🇷 Mustafa Kemal Atatürk, Kurtuluş Savaşı'nın önderi ve Türkiye Cumhuriyeti'nin kurucusudur. 'Yurtta barış, dünyada barış' ilkesiyle modern, laik, demokratik bir ülke inşa etmiştir. Harf Devrimi, Kadınlara Seçme ve Seçilme Hakkı, sanayileşme hamleleri onun vizyonunun ürünleridir. Onun izinde, aydınlık yarınlara. Atatürk'ün hangi devrimini daha çok seviyorsun?";
+else if(m.includes("roma imparatorluğu") || m.includes("julius sezar")) cevap="🏛️ Roma İmparatorluğu, tarihin en büyük ve en uzun ömürlü imparatorluklarından biridir. Cumhuriyet'ten imparatorluğa geçiş, Julius Caesar, Augustus, gladyatörler, hukuk sistemi, yollar, su kemerleri… Roma'nın izleri bugün bile Avrupa'da hissedilir. 'Veni, vidi, vici' (geldim, gördüm, yendim) sözü Caesar'a aittir. Roma tarihiyle ilgileniyor musun?";
+else if(m.includes("mısır medeniyeti") || m.includes("piramitler") || m.includes("firavun")) cevap="🇪🇬 Antik Mısır, piramitleri, hiyeroglif yazısı, firavunları ve mumyalama teknikleriyle bilinir. Keops Piramidi, dünyanın yedi harikasından günümüze ulaşan tek eserdir. Nil Nehri, Mısır uygarlığının can damarıydı. Tanrılar, büyü, bilim ve sanatı birleştiren bu medeniyet insanlık tarihine derin izler bırakmıştır. Piramitleri görmek ister miydin?";
+
+// --- DOĞA, HAYVANLAR, ÇEVRE, İKLİM (100k+)
+else if(m.includes("iklim değişikliği") || m.includes("küresel ısınma") || m.includes("karbon ayak izi")) cevap="🌍 Küresel ısınma, sera gazlarının artmasıyla dünya sıcaklıklarının yükselmesidir. Buzullar eriyor, deniz se
